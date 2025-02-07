@@ -14,8 +14,8 @@ screen.title("Pong Game")
 screen.listen()
 screen.tracer(0)
 
-r_paddle = Paddle((WIDTH/2 - 30, 0))
-l_paddle = Paddle((-WIDTH/2 + 20, 0))
+r_paddle = Paddle((WIDTH / 2 - 30, 0))
+l_paddle = Paddle((-WIDTH / 2 + 20, 0))
 
 ball = Ball()
 
@@ -30,5 +30,9 @@ while is_game_on:
     time.sleep(0.1)
     ball.move()
     screen.update()
+
+    # Detect collisions with top and bottom walls
+    if ball.ycor() >= ((HEIGHT / 2) - 20) or ball.ycor() <= -((HEIGHT / 2) + 20):
+        ball.bounce()
 
 screen.exitonclick()
