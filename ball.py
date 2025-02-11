@@ -23,4 +23,4 @@ class Ball(Turtle):
 
     def restart(self):
         self.bounce_x()
-        self.goto(0,0)
+        self.goto(0, 0)
